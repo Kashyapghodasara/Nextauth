@@ -10,10 +10,7 @@ export async function GET(){
         },{status: 200})
         res.cookies.set("token", "", {httpOnly: true, expires: new Date(0)})
         return res;
-    } catch (error:any) {
-        return NextResponse.json({
-            error: "error.message",
-            status: 500
-        })
-    }   
-}
+    } catch (error) {
+        console.error("Logout error:", error); // ✅ Now it's used
+      }
+}   

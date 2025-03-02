@@ -28,7 +28,7 @@ const SignupForm = () => {
     }
   }, [user]);
 
-  const submitHandler = async (e: any) => {
+  const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();  // Prevent form default submission behavior
     try {
       await axios.post("/api/user/signup", user);

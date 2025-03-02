@@ -14,10 +14,10 @@ const Login = () => { // ✅ Renamed to PascalCase
   const [disable, setDisable] = useState(false);
 
   useEffect(() => {
-    setDisable(user.email === "" || user.password === ""); 
-  }, [user.email, user.password]); 
+    setDisable(user.email === "" || user.password === "");
+  }, [user.email, user.password]);
 
-  const submitHandler = async (e: any) => {
+  const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const res = await axios.post("/api/user/login", user);
@@ -68,7 +68,7 @@ const Login = () => { // ✅ Renamed to PascalCase
           </button>
         </form>
         <p className="text-center text-sm text-gray-400 mt-6">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <a href="/signup" className="text-indigo-400 hover:text-indigo-300">Sign Up</a>
         </p>
       </div>
