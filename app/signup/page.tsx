@@ -10,7 +10,6 @@
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import React, { useState, useEffect } from 'react';
-import { toast } from 'react-toastify';
 
 const SignupForm = () => {
   const router = useRouter();
@@ -32,7 +31,7 @@ const SignupForm = () => {
   const submitHandler = async (e: any) => {
     e.preventDefault();  // Prevent form default submission behavior
     try {
-      const res = await axios.post("/api/user/signup", user);
+      await axios.post("/api/user/signup", user);
       console.log("User Registerd Successfully ✔")
       router.push("/login");
     } catch (error) {

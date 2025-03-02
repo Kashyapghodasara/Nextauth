@@ -14,7 +14,7 @@ const ProfilePage = () => {
     const handleLogout = async () => {
         try {
             alert('Are you Sure you want to Logout..?');
-            const res = await axios.get("/api/user/logout")
+             await axios.get("/api/user/logout")
             router.push("/") 
         } catch (error) { 
             console.log("Error Occure in Logout", error)

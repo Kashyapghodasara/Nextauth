@@ -1,8 +1,8 @@
 // Date - 27-11-2024  -  Wednesday
 
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
-export async function GET(req: NextRequest){
+export async function GET(){
     try {
         const res = NextResponse.json({
             message: "Logout Successfully",

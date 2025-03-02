@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
         });
 
         return NextResponse.json({ message: "User created successfully!" }, { status: 201 });
-    } catch (error: any) {
+    } catch (error) {
         console.error(error);  // Log error for debugging
         return NextResponse.json(
             { error: 'An error occurred while processing your request.' },
